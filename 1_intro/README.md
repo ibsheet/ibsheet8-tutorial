@@ -1,7 +1,7 @@
 # 1. IB Sheet8 제품 소개
 
 
-## 예제 사이트 소개
+## **예제 사이트 소개**
 다음 URL에 접속하여 제품의 예제를 확인 할 수 있습니다.
   - URL : https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/html/main.html
   
@@ -16,7 +16,7 @@
 
 
 
-## 온라인 메뉴얼 소개
+## **온라인 메뉴얼 소개**
 다음 URL에 접속하여 제품의 메뉴얼을 확인 할 수 있습니다.
  - URL : https://docs.ibleaders.com/ibsheet/v8/manual
 ![메뉴얼](./manual-intro.png "메뉴얼사이트")<br/>
@@ -33,7 +33,7 @@
 
 
 
- ## 개발환경 소개
+ ## **개발환경 소개**
 
  ### vscode 설정
  다음 URL에 접속하시어 vscode를 다운로드 받습니다.
