@@ -3,7 +3,7 @@
 
 ## **예제 사이트 소개**
 다음 URL에 접속하여 제품의 예제를 확인 할 수 있습니다.
-  - URL : https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/html/main.html
+  - URL : <a href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/html/main.html" target="_blank">https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/html/main.html</a>
   
 ![예제사이트](./sample.png "예제사이트")<br/>
 
@@ -18,7 +18,7 @@
 
 ## **온라인 메뉴얼 소개**
 다음 URL에 접속하여 제품의 메뉴얼을 확인 할 수 있습니다.
- - URL : https://docs.ibleaders.com/ibsheet/v8/manual
+ - URL : <a href="https://docs.ibleaders.com/ibsheet/v8/manual" target="_blank">https://docs.ibleaders.com/ibsheet/v8/manual</a>
 ![메뉴얼](./manual-intro.png "메뉴얼사이트")<br/>
 
 
@@ -37,7 +37,7 @@
 
  ### vscode 설정
  다음 URL에 접속하시어 vscode를 다운로드 받습니다.
-- URL : https://code.visualstudio.com/download
+- URL : <a href="https://code.visualstudio.com/download" target="_blank">https://code.visualstudio.com/download</a>
 ![VSCode](./vscode.png "VSCode사이트")<br/>
 
 설치된 vscode 프로그램에 교육을 위한 플러그인을 설치합니다.
