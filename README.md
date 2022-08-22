@@ -1,7 +1,7 @@
 # ibsheet8 기초 교육 자료
 1. [ibsheet8 제품 소개](./1_intro/)
 2. [객체 생성과 초기화](./2_initialize/)
-3. 함수와 이벤트
+3. [함수와 이벤트](./3_function_event)
 4. 데이터 조회
 5. 데이터 수정/저장
 6. 자동계산 Formula 기능 사용하기
