@@ -23,7 +23,7 @@ IBSheet.create({
   ]
 });
 ```
-## 2) <a href="https://docs.ibleaders.com/ibsheet/v8/manual/#docs/appx/data-structure">조회 데이터 구조</a>
+## 2) <a href="https://docs.ibleaders.com/ibsheet/v8/manual/#docs/appx/data-structure"  target='_blank'>조회 데이터 구조</a>
 ```javascript
 {
     "total":5140,  //Paging 조회시에만 필요(최초 조회때 한번만 필요)
@@ -99,6 +99,9 @@ IBSheet.create({
 });
 </script>
 ```
+
+
+<b><a href="https://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do" target="_blank">영화진흥원 영화목록 openapi</a></b>
 
 
 #### 데이터 로드
