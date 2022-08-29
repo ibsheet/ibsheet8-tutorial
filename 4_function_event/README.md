@@ -71,7 +71,7 @@ IBSheet.create({
         Cols: [
              LeftCols:[
                 {Header:"순번", Type:"Int", Name:"SEQ", Align:"center"},
-                {Header:"확정완료", Type:"Boolean", Name:"confirmed"}
+                {Header:"확정완료", Type:"Bool", Name:"confirmed"}
             ],
             Cols:[
                 {Header:"영화명", Type:"Text", Name:"movieNm"},
@@ -79,13 +79,13 @@ IBSheet.create({
                 {Header:"제작국가", Type:"Text", Name:"nationAlt"},
                 {Header:"장르", Type:"Text", Name:"genreAlt"},
                 {Header:"개봉일", Type:"Date", Name:"openDt", DataFormat:"yyyyMMdd", Format: "yyyy-MM-dd" },
-                {Header:"영화정보확인", Type:"Button", name:"movie_info_btn", ButtonText:"확인"}
+                {Header:"영화정보확인", Type:"Button", Name:"movie_info_btn", ButtonText:"확인"}
             ],
         ],
         Events: {
             onClick: function(evtParam){
                 if(evtParam.col === "movie_info_btn"){
-                    const openDt = evtParam.sheet.getValue( evtParam.row, "openDt" );
+                    const openDt = evtParam.sheet.getString( evtParam.row, "openDt" );
                     alert(`${openDt}에 개봉된 영화입니다.`);
                 }
             }
