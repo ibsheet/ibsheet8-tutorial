@@ -36,14 +36,14 @@ var OPT = {
             Header:"계좌 번호", 
             Name:"accountNo", 
             Type:"Text", 
-            EditMask:"^[\\w\\-]*$"  //편집 중 숫자와 "-" 만 입력 가능
+            EditMask:"^[\\w\\-]*$"  //편집 중 영문,숫자와 "-" 만 입력 가능
         }, 
                                                        
         {
             Header:"전화 번호", 
             Name:"telNo", 
             Type:"Text", 
-            ResultMask:"^0\\w{1,2}-?\\w{3,4}-?\\w{4}$", // 편집 완료 후 검사 검사
+            ResultMask:"^0\\d{1,2}-?\\d{3,4}-?\\d{4}$", // 편집 완료 후 검사 검사
             ResultMessage:"전화번호 형식으로 입력해 주세요." // 잘못된 입력시 보여질 경고 메세지 
         },
         ...
