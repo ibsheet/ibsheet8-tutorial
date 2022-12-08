@@ -76,18 +76,6 @@ function save(){
 }
 
 ```
-입력,수정,삭제 할 레코드의 개수는 getRowsByStatus()를 통해 얻을 수 있습니다.
-```js
-// 신규행
-var addRowCnt = mySheet.getRowsByStatus("Added,!Deleted").length;
-// 수정행
-var chgRowCnt = mySheet.getRowsByStatus("Changed,!Added,!Deleted").length;
-// 삭제행
-var delRowCnt = mySheet.getRowsByStatus("Deleted").length;
-if(confirm(`신규 : ${addRowCnt}건\n수정 : ${chgRowCnt}건\n삭제 : ${delRowCnt}건\n을 저장하시겠습니까?`)){
-    // ... 저장 로직 ...
-}
-```
 
 
 ### 2) 데이터 추출
@@ -117,15 +105,40 @@ id=AR4&SEQ=4&sCheck=0&sNation=%EC%9D%BC%EB%B3%B8&sTitle=%EB%A0%88%EC%A0%84%EB%93
 // queryStr 내용
 RequiredError|IBS010|AR51|sTitle
 ```
+```js
+var saveData = mySheet.getSaveString();
+// 필수값 확인
+if(saveData.indexOf("RequiredError")==-1){
+    // ... 저장 로직 ...
+}else{
+    var errCode = saveData.split("|");
+    var hRow = mySheet.getHeaderRows();
+    var colTitle = mySheet.getString(hRow[hRow.length - 1] , errCode[3]);
+    alert(`${colTitle}열은 필수 입력컬럼 입니다.`);
+    mySheet.focus(mySheet.getRowById(errCode[2]),errCode[3] );
+    return;
+}
+```
+
+
 ### 3) 수정데이터 전송
+
+전송 전에 getRowsByStatus()함수를 통해 서버로 전송될 데이터 건수를 확인하게 할 수 있습니다.
+```js
+// 신규행
+var addRowCnt = mySheet.getRowsByStatus("Added,!Deleted").length;
+// 수정행
+var chgRowCnt = mySheet.getRowsByStatus("Changed,!Added,!Deleted").length;
+// 삭제행
+var delRowCnt = mySheet.getRowsByStatus("Deleted").length;
+if(confirm(`신규 : ${addRowCnt}건\n수정 : ${chgRowCnt}건\n삭제 : ${delRowCnt}건\n을 저장하시겠습니까?`)){
+    // ... 저장 로직 ...
+}
+```
+
+
 시트가 제공하는 ajax함수나 외부라이브러리(jquery, axios)를 통해 서버로 수정한 데이터를 전송하고, 이에 대한 결과를 받습니다.
 ```js
-
-var saveData = mySheet.getSaveString();
-if(saveData == ""){
-    alert('데이터가 없거나, 수정된 데이터가 없습니다.');
-}
-if(saveData.indexOf("RequiredError")==-1){
     // 시트의 ajax 사용 예(axios나 jquery를 사용하셔도 됩니다.)
     mySheet.ajax({
         url : "./save.jsp",
@@ -135,14 +148,6 @@ if(saveData.indexOf("RequiredError")==-1){
             // ... 저장 완료 처리 ...
         }
     });
-}else{
-    var errCode = saveData.split("|");
-    var hRow = mySheet.getHeaderRows();
-    var colTitle = mySheet.getString(hRow[hRow.length - 1] , errCode[3]);
-    alert(`${colTitle}열은 필수 입력컬럼 입니다.`);
-    mySheet.focus(sheet.getRowById(errCode[2]),errCode[3] );
-    return;
-}
 ```
 
 ### 4) 저장 완료 처리(상태 데이터 클리어)
@@ -164,6 +169,46 @@ mySheet.ajax({
 })
 ```
 
+**완성된 저장 함수**
+```js
+function save(){
+    // 수정된 데이터가 있는지 판별
+    if(mySheet.hasChangedData()) {
+        var saveData = mySheet.getSaveString();
+        // 필수값 확인
+        if(saveData.indexOf("RequiredError")==-1){
+            var addRowCnt = mySheet.getRowsByStatus("Added,!Deleted").length;
+            // 수정행
+            var chgRowCnt = mySheet.getRowsByStatus("Changed,!Added,!Deleted").length;
+            // 삭제행
+            var delRowCnt = mySheet.getRowsByStatus("Deleted").length;
+            if(confirm(`신규 : ${addRowCnt}건\n수정 : ${chgRowCnt}건\n삭제 : ${delRowCnt}건\n을 저장하시겠습니까?`)){
+                mySheet.ajax({
+                    url : "./save.jsp",
+                    param : saveData,
+                    method : "post",
+                    callback: function(res, data, resXml, response){
+                        // 저장 완료 처리
+                        if( data && JSON.parse(data)?.IO?.Result > -1){
+                            mySheet.acceptChangedData();
+                        }
+                    }
+                });
+            }
+        }else{
+            var errCode = saveData.split("|");
+            var hRow = mySheet.getHeaderRows();
+            var colTitle = mySheet.getString(hRow[hRow.length - 1] , errCode[3]);
+            alert(`${colTitle}열은 필수 입력컬럼 입니다.`);
+            mySheet.focus(mySheet.getRowById(errCode[2]),errCode[3] );
+            return;
+        }
+    }else{
+        alert("수정 된 데이터가 없습니다.");
+    }
+}
+```
+
 
 ### 데이터 저장 함수
 위 과정을 한번에 수행하는 doSave()함수를 사용하실 수 있습니다.
@@ -171,8 +216,10 @@ mySheet.ajax({
 ```js
 // 해당 시트에 수정된 데이터를 추출하여 지정한 URL로 전송합니다.
 // 리턴되는 결과 json에 따라 상태를 클리어합니다.
-sheet.doSave({
-    url: "/amtTeml/save.do"
+mySheet.doSave({
+    url: "./save.jsp",
+    saveMode: 2, //수정된 데이터만 전송
+    quest: 1 //저장 전 confirm  표시
 });
 ```
 
