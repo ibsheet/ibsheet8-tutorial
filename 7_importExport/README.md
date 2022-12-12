@@ -43,27 +43,32 @@ function upload(){
 - DRM(문서암호화)가 설정된 파일에 대해서 서버에서 복호화 후 로드할 수 있습니다.(서버에 복호화 모듈 필요)
 - MS오피스가 아닌 외부 프로그램을 통해 만들어진 xlsx 파일은 업로드가 불가할 수 있습니다.
 
-***다음과 같은 파일이 제품과 함께 배포 됩니다.***<br>
-<div style='border:1px solid orange'>
-<p style='font-weight:700'>JAVA 기반 라이브러리</p>
-ibsheet8-1.0.x.jar<br/>
-commons-codec-1.6.jar<br/>
-commons-logging-1.1.3.jar<br/>
-batik-all-xml.jar<br/>
-poi-3.13.jar<br/>
-poi-ooxml-3.13.jar<br/>
-poi-ooxml-schemas-3.13.jar<br/>
-xmlbeans-2.3.0.jar<br/>
-<br/>
-<p style='font-weight:700'>JSP 파일</p>
-DirectDown2Excel.jsp<br/>
-DirectLoadExcel.jsp<br/>
-Down2Excel.jsp<br/>
-Down2Text.jsp<br/>
-LoadExcel.jsp<br/>
-LoadText.jsp<br/>
-</div>
-<span style='font-size:11px'>IIS 서버 사용시 관련 dll이 배포 됩니다.</span>
+
+***다음과 같은 파일이 제품과 함께 배포 됩니다.***
+<br>
+|**JAVA 기반 라이브러리**
+|---|
+|ibsheet8-1.0.x.jar<br/>
+|commons-codec-1.6.jar<br/>
+|commons-logging-1.1.3.jar<br/>
+|batik-all-xml.jar<br/>
+|poi-3.13.jar<br/>
+|poi-ooxml-3.13.jar<br/>
+|poi-ooxml-schemas-3.13.jar<br/>
+|xmlbeans-2.3.0.jar<br/>
+
+
+|**JSP 파일**
+|---|
+|DirectDown2Excel.jsp<br/>
+|DirectLoadExcel.jsp<br/>
+|Down2Excel.jsp<br/>
+|Down2Text.jsp<br/>
+|LoadExcel.jsp<br/>
+|LoadText.jsp<br/>
+
+
+*IIS 서버 사용시 관련 dll이 배포 됩니다.*
 
 
 
