@@ -46,7 +46,7 @@ function upload(){
 
 ***다음과 같은 파일이 제품과 함께 배포 됩니다.***
 <br>
-|**JAVA 기반 라이브러리**
+|**서버 라이브러리**
 |---|
 |ibsheet8-1.0.x.jar<br/>
 |commons-codec-1.6.jar<br/>
