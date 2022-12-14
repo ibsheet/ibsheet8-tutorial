@@ -80,11 +80,11 @@ function openCalendar(obj){
 
 document 내에 모든 시트 객체는  IBSheet객체에 등록됩니다.<br>
 따라서 IBSheet[0].getValue(row, col) 식으로 시트에 접근 할 수 있습니다.<br>
-*주의: sheet.dispose()함수를 호출시 IBSheet에 등록되었던 객체는 null 로 변경됩니다.<br>이 경우 시트는 제거되었으나 IBSheet.length를 통해 시트의 개수에는 변화가 없습니다.*
+*주의: <br>sheet.dispose()함수를 호출시 IBSheet에 등록되었던 객체는 null 로 변경됩니다.<br>이 경우 시트는 제거되었으나 IBSheet.length를 통해 시트의 개수에는 변화가 없습니다.*
 
 ### 2) 모든 시트 객체 제거하기
 
-IBSheet[0].[disposeAll](https://docs.ibleaders.com/ibsheet/v8/manual/#docs/static/dispose-all)함수를 통해 document에 생성된 모든 시트객체를 제거할 수 있습니다.
+IBSheet.[disposeAll](https://docs.ibleaders.com/ibsheet/v8/manual/#docs/static/dispose-all)함수를 통해 document에 생성된 모든 시트객체를 제거할 수 있습니다.
 
 ### 3) 모든 시트 객체가 생성된 후 발생하는 이벤트
 
