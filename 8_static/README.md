@@ -72,15 +72,15 @@ IBSheet.onBeforeCreate = function(init) {
         IBSheet.tempCal = cal;
     }
     //달력 닫기
-    document.body.addEventListener("click",function(){
+    document.body.addEventListener("mousedown",function(){
         if(IBSheet.tempCal){
             IBSheet.tempCal.close();
             IBSheet.tempCal = null;
         }
-    });
+    },1);
 
 </script>
-<input type="text" onfocus='openCalendar(this)' readOnly>
+<input type="text" onclick='openCalendar(this)' readOnly>
 ```
 
 ## 그외 참고 기능

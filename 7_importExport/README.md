@@ -15,7 +15,7 @@ javascript를 이용하여 서버의 도움없이 엑셀이나 txt 파일을 다
 [exportData](https://docs.ibleaders.com/ibsheet/v8/manual/#docs/funcs/core/export-data)함수를 통해 시트의 내용을 다운로드 합니다.
 ```js
 function download(){
-    mySheet.exportData({
+    mySheet2.exportData({
         fileName:"시트 데이터.xlsx", //뒤에 확장자에 따라 xlsx,txt,csv 등으로 다운로드 됩니다.
         sheetName:"지역별 인구 분포"  //엑셀파일로 다운로드시 worksheet 이름
     });
@@ -26,9 +26,7 @@ function download(){
 [importData](https://docs.ibleaders.com/ibsheet/v8/manual/#docs/funcs/core/import-data)함수를 통해 엑셀이나 텍스트 파일의 내용을 시트 위로 업로드 할 수 있습니다.
 ```js
 function upload(){
-    mySheet.importData({
-        startRow:4 // 몇 번째 행부터 읽어들인지 여부
-    });
+    mySheet2.importData();
 }
 ```
 ---

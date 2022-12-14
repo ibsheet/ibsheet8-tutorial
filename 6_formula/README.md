@@ -67,7 +67,9 @@ Cell설정 > Row설정 > Col 설정  (좌측이 우선순위가 높음)
 
 
 FormulaRow 속성 사용 예)
-```js
+```html
+<div id="sheetEl2" style="width:100%;height:500px"></div>
+<script>
 var targetGu = ["종로구","용산구"];
 var mySum = function(fr){
     // 2018년도 종로구,용산구에 해당하는 여성의 합
@@ -82,8 +84,8 @@ var mySum = function(fr){
     0);
 }
 IBSheet.create({
-    id: "mySheet",
-    el: "sheetEl",
+    id: "mySheet2",
+    el: "sheetEl2",
     options: {
         Cfg:{
             HeaderMerge:3
@@ -94,7 +96,7 @@ IBSheet.create({
             {Header: ["세대","세대","세대"],Type: "Int",Name: "Generation",Width: "120", FormulaRow:"Sum"},
             {Header: ["인구","한국인","남자"],Type: "Int",Name: "KoMale",Width: "120", FormulaRow:"Avg"},
             {Header: ["인구","한국인","여자"],Type: "Int",Name: "KoFemale",Width: "120", FormulaRow:mySum},
-            {Header: ["인구","한국인","계"],Type: "Int",Name: "KoTotal",Width: "120"},
+            {Header: ["인구","한국인","계"],Type: "Int",Name: "KoTotal",Width: "120"}
         ]
     },
     data:[
@@ -127,7 +129,7 @@ IBSheet.create({
         {"Year": 2017, "Region": "중구", "Generation": 60412, "KoMale": 62253, "KoFemale": 63456 }
   ]
 });
-
+</script>
 ```
 <br>
 
