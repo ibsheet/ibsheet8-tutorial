@@ -5,5 +5,5 @@
 4. [함수와 이벤트](./4_function_event)
 5. [데이터 수정/저장](./5_save)
 6. [Def 와 Formula](./6_formula)
-7. 파일저장/업로드 (import/export)
-8. 공통 기능 정의 (모든 시트에 동일한 기능 적용)
+7. [파일저장/업로드 (import/export)](./7_importExport)
+8. [공통 기능 정의 (IBSheet 객체 사용하기)](./8_static)
