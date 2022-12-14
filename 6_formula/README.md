@@ -147,8 +147,8 @@ Formula 속성 사용시에는 반드시 <mark>Def.Row.CanFormula</mark> 와 <ma
 
 ```js
 IBSheet.create({
-    id: "mySheet",
-    el: "sheetEl",
+    id: "mySheet2",
+    el: "sheetEl2",
     options: {
         Cfg:{
             HeaderMerge:3
@@ -161,7 +161,7 @@ IBSheet.create({
         },
         Cols:[
             ...
-            {Header: ["인구","한국인","계"],Type: "Int",Name: "KoTotal",Width: "120", Formula: "KoMale+KoFemale"},
+            {Header: ["인구","한국인","계"],Type: "Int",Name: "KoTotal",Width: "120", Formula: "KoMale+KoFemale"}
         ]
     },
     data:[

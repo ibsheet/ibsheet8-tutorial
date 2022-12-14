@@ -55,29 +55,21 @@ IBSheet.onBeforeCreate = function(init) {
 사용 방법은 다음과 같습니다.
 ```html
 <script>
-    function openCalendar(obj){
-        var cal = IBSheet.showCalendar(
-            {
-                Data:obj.value,
-                Buttons:7,
-            },{
-                Mouse: true
-            },
-            function(dd){
-                //dd는 timestamp 값이므로 yyyy-MM-dd 형식으로 변환
-                obj.value = IBSheet.dateToString(dd, 'yyyy-MM-dd');
-            }
-        );
-        // 달력 팝업을 임시로 저장
-        IBSheet.tempCal = cal;
-    }
-    //달력 닫기
-    document.body.addEventListener("mousedown",function(){
-        if(IBSheet.tempCal){
-            IBSheet.tempCal.close();
-            IBSheet.tempCal = null;
+function openCalendar(obj){
+    var cal = IBSheet.showCalendar(
+        {
+            Date: obj.value,
+            Format: 'yyyy-MM-dd',
+            Buttons:7,
+        },{
+            Mouse: true
+        },
+        function(dd){
+            //dd는 timestamp 값이므로 yyyy-MM-dd 형식으로 변환
+            obj.value = IBSheet.dateToString(dd, 'yyyy-MM-dd');
         }
-    },1);
+    );
+}
 
 </script>
 <input type="text" onclick='openCalendar(this)' readOnly>
