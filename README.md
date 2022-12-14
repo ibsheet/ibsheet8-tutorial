@@ -1,5 +1,5 @@
 # ibsheet8 기초 교육 자료
-1. [ibsheet8 제품 소개](./1_intro/)
+1. [ibsheet8 제품 소개](./1_intro/)   | <a href='https://youtu.be/l1KNimHO3cM' target='_blank'>(교육영상)</a>
 2. [객체 생성과 초기화](./2_initialize/)
 3. [데이터 로드](./3_dataLoad/)
 4. [함수와 이벤트](./4_function_event)
